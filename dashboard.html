@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block nasim_logo %}{% endblock nasim_logo %}
+
+{% block content %}
+{% comment %} <div class="mt-[15rem]">
+
+<button class="mt-20 float-right bg-slate-400 rounded-lg text-white"><a href="{% url 'account:update-profile' request.user.profile.id %}">create profile</a></button>
+</div> {% endcomment %}
+{% comment %} {{form.as_p}} {% endcomment %}
+<div class="mt-16 p-2">
+
+    <div class="flex flex-col-reverse md:flex-row gap-4">
+    
+
+     <div class="bg-slate-200 p-4 border rounded-md my-2 w-[100%]">
+        <div class="pt-2">
+            <p>First Name</p>
+            <p class="text-2xl font-bold">{{request.user.first_name}}</p>
+        </div>
+
+        <div>
+            <p>Last Name</p>
+            <p class="text-2xl font-bold">{{request.user.profile.other_name}}</p>
+        </div>
+
+       <div>
+         <p>Date of birth</p>
+         <p class="text-2xl font-bold">{{request.user.profile.date_of_birth}}</p>
+       </div>
+
+       <div>
+        <p>Gender</p>
+        <p class="text-2xl font-bold">{{request.user.profile.gender}}</p>
+       </div>
+
+       <div>
+        <p>phone number</p>
+        <p class="text-2xl font-bold">{{request.user.profile.phone_number}}</p>
+       </div>
+
+       <div>
+        <p>state_of_origin</p>
+        <p class="text-2xl font-bold">{{request.user.profile.state_of_origin}}</p>
+       </div>
+
+       <div>
+        <p>local_government_area_of_origin</p>
+        <p class="text-2xl font-bold">{{request.user.profile.local_government_area_of_origin}}</p>
+       </div>
+
+       <div>
+        <p>scheme name</p>
+        <p class="text-2xl font-bold">{{request.user.profile.scheme_name}}</p>
+       </div>
+
+       <div>
+        <p>year of application</p>
+        <p class="text-2xl font-bold">{{request.user.profile.year_of_application}}</p>
+       </div>
+
+      </div>
+
+    <div class="bg-slate-200 p-4 rounded-md md:w-[40%] my-2">
+        <h3 class="text-2xl mt-2 mb-2">Npower</h3>
+        <img class="rounded-3xl" src="{{request.user.profile.profile_pic.url}}" alt="profile_pic.png">
+
+        <div class="my-2 space-x-1">
+          <button class="bg-green-700 rounded-md ring-2 text-blue-500 p-1">
+            <a href="{% if request.user.is_authenticated %} {% url 'account:update-profile' request.user.profile.id %} {% endif %}">Updateprofile<a/>
+            </button>
+
+          <button class="bg-red-600 rounded-md :ring-2 text-white p-2 font-bold">
+            <a href="{% if request.user.is_authenticated %} {% url 'account:delete_profile' request.user.profile.id %} {% endif %}">Deleteprofile<a/>
+            </button>
+        </div> 
+    </div>
+  </div>
+
+    
+</div>
+{% block footer %}{% endblock footer %}
+{% block last_footer %}{% endblock last_footer %}
+
+{% endblock  %}

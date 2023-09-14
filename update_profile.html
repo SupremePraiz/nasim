@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="mt-[15rem] ">
+
+    <form method="post" class="flex flex-col w-[90%] md/;w-[50%] mx-auto gap">
+        {% csrf_token %}
+        <label for="id_profile_pics">{{object.profile_pic}}</label>
+        <input type="file" 
+        name="profile_pics"
+        accept="image/*"
+         id="profile_pic-clear_id"><br>
+        {% comment %} {{form}} {% endcomment %}
+  
+   
+    {% comment %} {% render_field form.profile_pic placeholder=form.profile_pic.label class="bg-slate-200 rounded-md focus:right-70"%}<br> {% endcomment %}
+    {% render_field form.other_name placeholder=form.other_name.label class="bg-slate-200 rounded-md focus:right-70"%}<br>
+    {% render_field form.date_of_birth  placeholder=form.date_of_birth.label class="bg-slate-200 rounded-md focus:right-70"%} <br>
+    {% render_field form.gender placeholder=form.gender.label class="bg-slate-200 rounded-md focus:right-70"%}<br>
+    {% render_field form.phone_number placeholder=form.phone_number.label class="bg-slate-200 rounded-md focus:right-70"%}<br>
+    {% render_field form.state_of_origin placeholder=form.gender.label class="bg-slate-200 rounded-md focus:right-70"%}<br>
+    {% render_field form.scheme_name placeholder=form.scheme_name.label class="bg-slate-200 rounded-md focus:right-70"%}<br>
+    {% render_field form.year_of_application placeholder=form.year_of_application.label class="bg-slate-200 rounded-md focus:right-70"%}<br>
+
+        <button class="bg-green-700 rounded-md ring-2 text-blue-500 p-1" type="submit"> submit</button>
+    </form>
+</div>
+    {% endblock content %}
+
+    {% block footer %}{% endblock footer %}
+    {% block last_footer %}{% endblock last_footer %}
+    {% comment %} <div class="mt-[10rem]">
+    <span class="bg-blue-300">
+    <form method="post" class="flex flex-col w-[90%] mx-auto gap-2 ">
+        {% csrf_token %}
+        <p>
+        <label for="id_User">User:</label><br>
+        <input class="bg-slate-300 rounded-sm" type="text" name="User" maxlength="254" required="" id="id_User">
+      </p>
+    
+      <p>
+        <label for="id_profile_pic">Profile pic:</label><br>
+        <input type="file" name="profile_pic" accept="image/*" id="id_profile_pic">
+        
+          <span class="helptext">200kb image</span>
+      </p>
+    
+      <p>
+        <label for="id_other_name">Other name:</label><br>
+        <input class="bg-slate-300 rounded-sm" type="text" name="other_name" maxlength="50" id="id_other_name">
+      </p>
+      
+      <p>
+        <label for="id_date_of_birth">Date of birth:</label><br>
+        <input class="bg-slate-300 rounded-sm" 
+        type="text"
+         name="date_of_birth" 
+         required="" 
+         id="id_date_of_birth">  
+      </p>
+
+      <p>
+        <label for="id_gender">Gender:</label><br>
+        <select class="bg-slate-300 rounded-sm" name="gender" maxlength="1" id="id_gender">
+      <option value="M">M</option>
+    
+      <option value="F">F</option>
+    
+    </select>
+    </p>
+    
+      
+      <p>
+        <label for="id_phone_number">Phone number:</label><br>
+        <input class="bg-slate-300 rounded-sm" type="text" name="phone_number" maxlength="11" minlength="11" required="" id="id_phone_number"> 
+      </p>
+    
+      
+      <p>
+        <label for="id_state_of_origin">State of origin:</label><br>
+        <input class="bg-slate-300 rounded-sm" type="text" name="state_of_origin" maxlength="20" required="" id="id_state_of_origin">
+     </p>
+    
+      
+      <p>
+        <label for="id_local_government_area_of_origin">Local government area of origin:</label><br>
+        <input class="bg-lime-300 rounded-sm" type="text" name="local_government_area_of_origin" maxlength="70" required="" id="id_local_government_area_of_origin">
+     </p>
+    
+      
+      <p>
+        <label for="id_scheme_name">Scheme name:</label><br>
+        <input class="bg-slate-300 rounded-sm" type="text" name="scheme_name" maxlength="100" required="" id="id_scheme_name">
+      </p>
+    
+      
+      <p>
+        <label for="id_year_of_application">Year of application:</label><br>
+        <input class="bg-slate-300 rounded-sm" type="text" name="year_of_application" required="" id="id_year_of_application"> 
+      </p>
+      <button type="submit">signup</button>
+       </form>
+    </span>
+
+    <br>
+    <hr>
+    {% for p in profile %}
+    <p>{{p.other_name}}</p>
+    <p>{{p.date_of_birth}}</p>
+    <p>{{p.gender}}</p>
+    <p>{{p.phone_number}}</p>
+    <p>{{p.state_of_origin}}</p>
+    <p>{{p.local_government_area_of_origin}}</p>
+    <p>{{p.scheme_name}}</p>
+    <p>{{p.year_of_application}}</p>
+    {% endfor %}
+
+</div>
+{% endblock content %}
+
+
+
+{% block footer %}{% endblock footer %}
+{% block last_footer %}{% endblock last_footer %} {% endcomment %}

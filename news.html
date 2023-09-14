@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}{% endblock title %}
+
+
+{% block css_files %}
+
+{% endblock css_files %}
+
+{% block header_write_up %}{% endblock header_write_up %}
+
+{% block content %}
+<div class="__news">
+    <p></p>
+    <h2>Recent News</h2>
+    <p>Happenings and other related information</p>
+</div>
+
+
+    <div class="__article">
+        <section class="__first-article">
+            <h3>N-Power Batch C</h3>
+            <p>All N-Power batch-c applicants are expected to update their profile and take 
+                test for possible shortlisting to the next stage of the N-Power application process</p>
+                <p>Please note that all successful candidates will be sent a mail and given directions on
+                    the next stage.</p>
+                    <p>Candidates not selected can re-apply for the next batch of the programme as soon as it
+                        opens for application.<p/>
+                        <p>Signed NASIMS</p>
+                    </section> 
+                    <img class="woman-image" src="{% static 'images/woman.jpg' %}" alt="woman pic">
+       </div>
+
+    <section class="__customer-care">
+        <div class="__section1">
+            <img class="__female_worker_image" src="{% static 'images/female-worker.jpg' %}" alt="praiz the author of this blog">
+            <div class="__enquiries">
+                <h3>N-Power Customer Care</h3>
+                <p>All enquires and complains should be channeled through the N-Power
+                    customer care line. Details are as follow:</p>
+                    <p>Phone Number: 018888340 or 018888189</p>
+                    <p>Opening days: Mondays Through Fridays (Time: 9AM – 9PM)</p>
+                    <p>Saturdays (9AM-2PM)</p>
+                    <p>Note: you can also send a mail to support.npower@nasims.gov.ng</p>
+                </div>
+            </div>
+    </section>
+{% endblock content %}

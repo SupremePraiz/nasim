@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+    
+    {% block title %}
+    nasims
+    {% endblock title %}
+    
+    {% block css_files %}
+
+    
+    {% endblock  %}
+
+    {% block nasim_logo %}{% endblock nasim_logo %}
+
+
+    {% comment %} {% block extra_styles %}{% endblock extra_styles %} {% endcomment %}
+    {%block content%}
+    {% comment %} <p>{% lorem 8 b random %}</p> {% endcomment %}
+    <div class="mt-20 bg-black text-center text-white px-2 py-6">
+        <p>
+            Read more about our response to the Covid-19 pandemic 
+            <a class="text-green-700 hover:text-white">here</a>
+        </p>
+    </div>
+
+    <div class="md:flex p-10 gap-4">
+        <div class="md:w-[100%] my-4 px-10">
+        <img class="w-[80%]" src="{% static 'images/buhari.jpg' %}" alt="pic of buhari">
+        </div>
+
+        <div class="md:w-[100%] my-4 text-center md:text-left">
+            <h3 class="text-2xl font-bold">Welcome to the National Social Investment Management System (NASIMS)</h3>
+
+            <article class="my-4">
+                <a class="text-green-400" href="">The Federal Ministry of Humanitarian Affairs, Disaster Management and Social
+                  Development </a>
+                  was established on Wednesday August 21st, 2019 by an Executive
+                  pronouncement by the President and Commander in Chief of the Armed Forces
+                  of Nigeria, H.E., Muhammadu Buhari GCFR at the inauguration of Ministers for
+                  the Federal Republic of Nigeria. Under My leadership as Minister, the Ministry
+                  will position itself in light of the prevailing Humanitarian situation in the 
+                  country through its Vision, Mission and Core values to promote Human dignity 
+                  and Integration of basic Humane benevolence and compassion in the treatment 
+                  of all Nigerians
+                  <p class="mt-14">sadiya Umar Farouq</p>
+                  <p class="my-2">Honorable Minister</p>
+            </article>
+        </div>
+    </div>
+
+    <div class=" md:flex md:flex-row-reverse p-10 gap-4">
+
+        <div class="md:w-[100%] my-4 px-10">
+            <img class="w-[100%] md:w-[80%] " src="{% static 'images/farmers.jpg' %}" alt="pic of farmers">
+        </div>
+        
+        <div class="md:w-[100%] my-4 text-center md:text-left">
+            <span class="text-amber-300">About Us</span>
+            <h3>Providing efficient, effective, and coordinated<br> humanitarian response to Nigerians.</h3>
+            <article class="my-4">The National Social Investment Program of Nigeria is a social welfare initiative created 
+                by the Federal government of Nigeria in 2015 under the direction of the National Social 
+                Investment Office. The Program was created to ensure a more equitable distribution of 
+                resources to vulnerable populations, including children, youth, and women. Under President
+                Muhammadu Buhari the office has created four programs to address poverty and help increase
+                economic development.
+            </article>
+        </div>
+        
+    </div>
+
+
+
+    <div class=" bg-blue-100 mx-auto my-4 mt-5 mb-5">
+        <div class="text-center my-5">
+         <h2 class="text-2xl font-bold my-4">Our Programmes</h2>
+         <p>Our programmes are specifically designed to empower, train and uplift
+           millions of abandoned Nigerians in every part of the country.</p>
+         </div>
+
+    <span class="md:flex gap-4 mt-5 mb-5">
+
+         <div class="bg-white w-[98%] mx-auto rounded-md ml-5 mb-5 p-5">
+            <img src="{% static 'images/engineer.jpg' %}" alt="" class="w-[100%] rounded-t-md">
+            <h2 class=" text-amber-500 text-2xl my-4">National Home Grown School Feeding Program (NHGSFP)</h2>
+            <p>Nigeria's Conditional Cash Transfer program provides targeted cash transfers to the most 
+               vulnerable households with the long-term goal of lifting millions out of poverty.<p/>
+               
+            <div class="p-4 md:flex space-x-2">
+                  <button class="block bg-green-700 px-8 py-4 rounded-md text-white font-bold hover:ring-2 hover:ring-green-700/40 ">Apply Now</button>
+    
+                  <button class="block mt-3 bg-green-700/40 px-8 py-4 rounded-md text-green-800 font-bold hover:ring-2 hover:ring-green-700/40 ">LearnMore</button>
+               </div>       
+            </div>
+
+
+                 <div class="bg-white w-[98%] mx-auto rounded-md mr-5 mb-5 p-5">
+                    <img src="{% static 'images/money.jpg' %}" alt="" class="w-[100%] rounded-t-md">
+                    <h2 class=" text-amber-500 text-2xl my-4">National Home Grown School Feeding Program (NHGSFP)</h2>
+                    <p>Nigeria's Conditional Cash Transfer program provides targeted cash transfers to the most 
+                       vulnerable households with the long-term goal of lifting millions out of poverty.<p/>
+
+                       <div class="p-4 md:flex space-x-2">
+                        <button class="block bg-green-700 px-8 py-4 rounded-md text-white font-bold hover:ring-2 hover:ring-green-700/40 ">Apply Now</button>
+            
+                    <button class="block mt-3 bg-green-700/40 px-8 py-4 rounded-md text-green-800 font-bold hover:ring-2 hover:ring-green-700/40 ">LearnMore</button>
+                    </div>
+                    </div>
+                </span>
+    </div>
+         
+
+      <div class="text-center my-10">
+        <h3 class="text-3xl my-4"> Latest News</h3>
+        <p class=" my-4">Keep up with the latest updates about programmes and events</p>
+      </div>
+
+
+    
+    <div class="md:flex ml-4 mr-4 mb-4 mt-4 space-x-2 shadow-gray-400 block">
+            <div class="block bg-white rounded-sm">
+                <img  class="rounded-md" src="{% static 'images/male_worker.jpg' %}" alt="male-worker pic">
+                <span class="ml-2 mr-2 text-sm p-8">
+                    <h3 class="text-2xl">N-Power Batch C</h3>
+                    <div class="my-2">
+                        <small class="border-b-2  border-amber-400">June 25</small>,
+                        <small> 2020</small>
+                          </div>
+                    <p class="font-light p-3">All empower batch c applicants are expected to 
+                        update their profile and take test for possible shortlisting...
+                    </p>
+                </span>
+            </div>
+        
+            <div class="block bg-white rounded-sm">
+                <img  class="rounded-md" src="{% static 'images/female_worker.jpg' %}" alt="male-worker pic">
+                <span class="ml-2 mr-2 text-sm p-8">
+                    <h3 class="text-2xl">N-Power Customer Care</h3>
+                    <div  class="my-2">
+                        <small class="border-b-2  border-amber-400">June 25</small>,
+                        <small> 2020</small>
+                          </div>
+                    <p class="font-light ">All enquires and complains should be
+                        channeled through the N-Power customer care line. Details are as follows:
+                    </p>
+                </span>
+
+            </div>
+
+            <div class="block bg-white rounded-sm">
+                <img class="rounded-md" src="{% static 'images/desktops.jpg' %}" alt="desktop pic">
+                <span class="ml-2 mr-2 text-sm p-8 ">
+                    <h3 class="text-2xl">NASIMS Test Portal</h3>
+                    <div  class="my-2">
+                  <small class="border-b-2  border-amber-400">June 25,</small>
+                  <small> 2020</small>
+                    </div>
+                    <p class="font-light p-3">Please make sure your records are fully updated on the NASIMS portal
+                        before taking this test..
+                    </p>
+                </span>
+            </div>
+    </div>
+    
+
+
+{% endblock content %}
+

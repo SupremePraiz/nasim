@@ -1,0 +1,142 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% comment %} <link rel="stylesheet" href="{% static 'account/icons/font/bootstrap-icons.min.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'dist/tailwind.css' %}">
+    
+    <title>{% block title %}{% endblock title %}</title>
+    
+    {% block css_files %}{% endblock css_files %}
+</head>
+<body>
+
+     {% comment %} '''this is  how to send a messages u called in the view''' {% endcomment %}
+    
+    <header class="fixed left-0 right-0 top-0 bg-white shadow-black">
+        <button class="bi bi-justify __dropdown"></button>
+        {% if not request.user.is_authenticated %}
+        <nav class="flex justify-between gap space">
+            
+
+            <h3 class="hidden md:block ml-1" >Federal Ministry of Humanitarian Affairs, 
+                Disaster Management and Social Development</h3>
+                
+                
+                <ul class="md:flex gap-4 hidden">
+                    <li><a href="{% url 'account:home-page' %}">Home</a></li>
+                    <li><a href="{% url 'account:about-page' %}">About</a></li>
+                    <li><a href="{% url 'account:news-page' %}">News</a></li>
+                    <li><a href="{% url 'account:contact-page' %}">Contact</a></li>
+                    <button class="bg-green-400 rounded-md p-1 mr-1 shadow-lg"><a href="{% url 'account:login-page' %}">Login</a></button>
+                </ul>
+            </nav>
+            
+            {% else %}
+            <nav class="flex justify-between ml-2 mr-2">
+            {% comment %} {% block nasim_logo %} {% endcomment %}
+            <img  height="50" width="50" src="{% static 'images/nasim_logo.jpg' %}" alt="nasim logo">
+            {% comment %} {% endblock nasim_logo %} {% endcomment %}
+
+            {% block dashboard_header %}
+            <div class="flex">
+                <button class="bg-green-700 rounded-md ring-2 text-blue-500 p-1" type="submit"><a href="{% url 'account:logout-page' %}">logout</a></button>
+            </div>
+        </nav>
+        
+            <div class="flex">
+                <ul class="flex space-x-2 text-green-500">
+                    <li><a href="">Overview</a></li>
+                    <li><a href="">Screening</a></li>
+                    <li><a href="">Verification</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Verification</a></li>
+                </ul>
+                <div style="margin-top: 10px">
+                <button class="__tab_button">View Test Result</button>
+                </div>
+            </div>
+            {% endblock dashboard_header %}
+            
+            {% endif %}
+        </header>
+        
+        
+{% block extra_styles %}{% endblock extra_styles %}
+
+        <main class="__login">{% block  content %}  {% endblock  %}</main>
+
+
+        {% comment %} {% block content %}{% endblock content %} {% endcomment %}
+        
+        {% if messages %}
+        {% for message in messages %}
+        <div class="relative top-48 inset-x-0 w-[90%] ms:w-[96] bg-green-700 p-3 rounded-md mx-auto text-center text-white font-bold">
+            {{message}}<div/>
+        {% endfor %}
+        {% endif %}
+   
+   
+
+        <main>
+            {% block footer %}
+            <div class ="flex justify-center">
+            <button class="bg-green-700 px-8 py-4 rounded-md text-white font-bold hover:ring-2 hover:ring-green-700/40 ">News page</button>
+            </div>
+            <div class ="bg-black text-white p-4 my-4 text-center">
+                <p id="first">Be the first to know</p>
+                <h3 class="text-2xl">Follow us on our Social media platforms for all the latest updates and applications news</h3>
+                
+                    <ul class="__media-icon">
+                        <li> 
+                            <a href="">
+                            <i class="bi bi-facebook"></i></a>
+                         </li>
+                        <li> 
+                            <a href=""><i class="bi bi-twitter"></i></a> </li>
+                        <li>
+                             <a href=""><i class="bi bi-instagram"></i> </a> 
+                        </li>
+                    </ul>
+            </div>
+
+            <div class="my-4 text-center">
+            <h3 class="font-bold text-3xl my-3">Got Questions?</h3>
+            <p class="my-2">For enquiries, complaints or requests,feel free to reach out to us.</p>
+            
+            <button class="bg-green-700 px-8 py-4 rounded-md text-white font-bold hover:ring-2 hover:ring-green-700/40">Contact Us</button>
+        </div>
+        {% endblock  %}
+
+        {% block last_footer %}
+        <div class = "bg-green-900">
+            <ul class= "flex gap-3 text-white justify-center">
+                <li><a class="hover:text-green-700" href="{% url 'account:apply-page' %}">Apply</a></li>
+                <li><a class="hover:text-green-700" href="{% url 'account:about-page' %}">About</a></li>
+                <li><a class="hover:text-green-700" href="{% url 'account:news-page' %}">News</a></li>
+                <li><a class="hover:text-green-700" href="{% url 'account:contact-page' %}">Contact</a></li>
+            </ul>
+            <ul class="__footer-icon">
+                <li> 
+                    <a href="">
+                        <i class="bi bi-facebook"></i></a>
+                    </li>
+                    <li> 
+                        <a href=""><i class="bi bi-twitter"></i></a> </li>
+                        <li>
+                            <a href=""><i class="bi bi-instagram"></i> </a> 
+                        </li>
+                    </ul>
+                    <p class="text-white text-center"> Copyright 2023. Federal Ministry of Humanitarian Affairs, 
+                        Disaster Management and Social Development. All Rights Reserved.</p>
+                    </div>
+                    
+                    {% endblock last_footer %}
+                </main>
+    
+</body>
+</html>
+
+
